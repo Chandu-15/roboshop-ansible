@@ -14,13 +14,13 @@
           security_group: "{{ sg_id }}"
           tags:
             Name: "{{ item }}"
-          loop:
+        loop:
             - mongodb
             - mysql
             - rabbitmq
-            - reddis
+            - redis
             - user
-          register: ec2_output
+        register: ec2_output
 
       - name: create route53
         amazon.aws.route53:
