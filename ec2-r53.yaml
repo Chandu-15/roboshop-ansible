@@ -5,7 +5,7 @@
     ami_id: ami-09c813fb71547fc4f
     sg_id: sg-0c2d09e696b53ec3b
     domain_name: daws-86.shop
-   task:
+   tasks:
       - name: create ec2 instance
         amazon.aws.ec2_instance:
           name: "{{ item }}"
