@@ -24,7 +24,7 @@
         zone: "{{ domain_name }}"
         record: "{{ item.item }}.{{ domain_name }}"
         record_type: A
-        value: "{{ item.instance[0].private_ipaddress}}"
+        value: "{{ item.instances[0].private_ipaddress}}"
         ttl: 1
         over_write: true
        loop: "{{ ec2_output.results }}"
