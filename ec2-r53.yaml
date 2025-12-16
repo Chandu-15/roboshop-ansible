@@ -6,13 +6,13 @@
     sg_id: sg-0c2d09e696b53ec3b
     domain_name: daws-86.shop
    tasks:
-    - name : "create ec2-instance"
-      amazon.aws.ec2_instance:
-        - name: "{{ item }}"
-          image_id: "{{ ami_id }}"
-          instance_type: "t3.micro"
-          security_group: "{{ sg_id }}"
-          tags:
-            Name: "{{ item }}"
-      loop: "{{ instances }}"
+     - name : "create ec2-instance"
+       amazon.aws.ec2_instance:
+          - name: "{{ item }}"
+            image_id: "{{ ami_id }}"
+            instance_type: "t3.micro"
+            security_group: "{{ sg_id }}"
+            tags:
+              Name: "{{ item }}"
+       loop: "{{ instances }}"
 
